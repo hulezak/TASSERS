@@ -40,6 +40,10 @@ const StudentPage = () => {
               <p className="student-school">{student.school}</p>
               <table className="info-table">
                 <tbody>
+                <tr>
+                    <th>City:</th>
+                    <td>{student.city}</td>
+                  </tr>
                   <tr>
                     <th>Grade:</th>
                     <td>{student.grade}</td>
