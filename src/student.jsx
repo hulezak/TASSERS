@@ -8,7 +8,7 @@ const StudentPage = () => {
     // Fetch student data from the API
     const fetchStudents = async () => {
       try {
-        const response = await fetch('http://localhost:5000/allteam');
+        const response = await fetch('https://tass-backend-3.onrender.com/allteam');
         const data = await response.json();
         setStudents(data);
       } catch (error) {

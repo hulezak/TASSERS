@@ -29,7 +29,7 @@ const FormPage = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5000/submit', formData);
+      const response = await axios.post('https://tass-backend-3.onrender.com/submit', formData);
       const id = response.data.id;
       navigate(`/data/${id}`);
     } catch (error) {

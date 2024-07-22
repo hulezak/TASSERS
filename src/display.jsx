@@ -11,7 +11,7 @@ const DisplayPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/data/${id}`);
+        const response = await axios.get(`https://tass-backend-3.onrender.com/data/${id}`);
         setFormData(response.data);
       } catch (error) {
         console.error('Error fetching form data:', error);

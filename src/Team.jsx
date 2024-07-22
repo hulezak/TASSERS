@@ -9,7 +9,7 @@ const TeamPage = () => {
   useEffect(() => {
     const fetchTeamData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/allteam');
+        const response = await axios.get('https://tass-backend-3.onrender.com/allteam');
         setTeamData(response.data);
       } catch (error) {
         console.error('Error fetching team data:', error);

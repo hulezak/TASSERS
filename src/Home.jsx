@@ -29,7 +29,7 @@ const Home = () => {
     </div>
            <div className={classes.footer_links}>
     <Link to='/form'>Form</Link>
-    <Link to='/'>home</Link>
+    <Link to='/'>Home</Link>
     <Link to='students'>Students</Link>
           </div>
           
