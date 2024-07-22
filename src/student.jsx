@@ -6,6 +6,8 @@ const StudentPage = () => {
 
   useEffect(() => {
     // Fetch student data from the API
+
+
     const fetchStudents = async () => {
       try {
         const response = await fetch('https://tass-backend-3.onrender.com/allteam');

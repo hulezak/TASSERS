@@ -31,6 +31,7 @@ const Home = () => {
     <Link to='/form'>Form</Link>
     <Link to='/'>Home</Link>
     <Link to='/students'>Students</Link>
+    <Link to='/team'>team</Link>
           </div>
           
           </div>
