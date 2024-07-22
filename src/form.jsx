@@ -1,4 +1,3 @@
-// src/FormPage.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -28,21 +27,24 @@ const FormPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-
     try {
       const response = await axios.post('https://tass-backend-3.onrender.com/submit', formData);
       const id = response.data.id;
       navigate(`/data/${id}`);
     } catch (error) {
       console.error('Error submitting form data:', error);
+      if (error.response) {
+        console.error('Error response data:', error.response.data);
+        console.error('Error response status:', error.response.status);
+      }
     }
   };
 
   return (
     <div>
       <h2>Information Form</h2>
-      <form onSubmit={handleSubmit} className='form-container '>
-      <label>
+      <form onSubmit={handleSubmit} className='form-container'>
+        <label>
           Name:
           <input type="text" name="name" value={formData.name} onChange={handleChange} required />
         </label><br /><br />
