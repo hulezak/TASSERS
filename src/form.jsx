@@ -17,6 +17,7 @@ const FormPage = () => {
     birthDate: ''
   });
 
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -26,10 +27,12 @@ const FormPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     try {
       const response = await axios.post('https://tass-backend-3.onrender.com/submit', formData);
       const id = response.data.id;
+      setLoading(false);
       navigate(`/data/${id}`);
     } catch (error) {
       console.error('Error submitting form data:', error);
@@ -37,6 +40,7 @@ const FormPage = () => {
         console.error('Error response data:', error.response.data);
         console.error('Error response status:', error.response.status);
       }
+      setLoading(false);
     }
   };
 
@@ -98,7 +102,9 @@ const FormPage = () => {
           Birth Date:
           <input type="text" name="birthDate" placeholder="MM-DD" value={formData.birthDate} onChange={handleChange} required />
         </label><br /><br />
-        <button type="submit">Submit</button>
+        <button type="submit" disabled={loading}>
+          {loading ? <div className="spinner">....</div> : 'Submit'}
+        </button>
       </form>
     </div>
   );
